@@ -241,15 +241,16 @@ function checkTextArea(){
     if(document.form1.radio[0].checked == false &&
 		document.form1.radio[1].checked == false) {
 			document.getElementById("gender_error").style.visibility = "visible";
-			document.getElementById("gender_error").innerHTML = "Please select a gender";
+			document.getElementById("gender_error").innerHTML = "select a gender";
 			
 			return false;
 	}
     if( document.form1.checkbox_sample18.checked == false 
 		&& document.form1.checkbox_sample19.checked == false 
 		&& document.form1.checkbox_sample20.checked == false) {
+		
 			document.getElementById("interest_error").style.visibility = "visible";
-			document.getElementById("interest_error").innerHTML = "please select atleast one interest";
+			document.getElementById("interest_error").innerHTML = "select atleast one interest";
 		return false;
 	}
     if(message=="")
