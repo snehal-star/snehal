@@ -229,6 +229,19 @@ function checkBdate() {
 	}
 
 }
+// function checkGender(){
+//     if(document.form1.radio[0].checked == false &&
+// 		document.form1.radio[1].checked == false) {
+// 			document.getElementById("gender_error").style.visibility = "visible";
+// 			document.getElementById("gender_error").innerHTML = "select a gender";
+			
+// 			return false;
+//     }
+//     else{
+//         document.getElementById("gender_error").style.visibility = "hidden";
+// 		return true;
+//     }
+// }
 function checkTextArea(){
     var message=document.forms["form1"]["write"].value;
 
@@ -260,6 +273,8 @@ function checkTextArea(){
         return false;
     }
     else{
+        document.getElementById("gender_error").style.visibility="hidden";
+        document.getElementById("interest_error").style.visibility="hidden";
         document.getElementById("textarea_error").style.visibility="hidden";
         return true;
     }
@@ -307,15 +322,33 @@ function checkTextArea(){
 //             }
 // }
 function testValidation(){
+    
     if(!checkFirstName()||!checkLastname()||!checkPhoneNo()||!checkOfficeNo()||
     !checkPassword()||!confirmPassword()||!checkBdate()||!checkTextArea()||
     !checkGender()||!checkInterest()){
         document.getElementById("errorOnSubmit").style.visibility = "visible";
-        document.getElementById("errorOnSubmit").innerHTML = "check all field";
+        document.getElementById("errorOnSubmit").innerHTML = "check if any field is empty";
         return false;   
     }
     else{
         document.getElementById("errorOnSubmit").style.visibility="hidden";
         return true;
     }
+    
+}
+
+function dateValidation(){
+    var year = today.getFullYear();
+    var m = today.getMonth()+1;
+    var d = today.getDate();
+
+    if( d>0 && d<=9){
+        date="0"+d;
+    }
+    if( m>0 && m<=9){
+        month="0"+m;
+    }
+   
+    var maxDate = year+"-"+month+"-"+date;
+    document.getElementById("bdate").max = maxDate;
 }

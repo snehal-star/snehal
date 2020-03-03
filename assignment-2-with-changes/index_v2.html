@@ -171,10 +171,15 @@
 							<input name="cpassword" maxlength="12" type="password" onblur="confirmPassword()"/> 
 							<span class="error" id="confirmPassword_error" style="visibility: hidden;">error</span>
 						</div>
+
+<!-- <div class="dob_fileds selectbox">
+								<label>My birthdate is <span id="bdateError" class="bdt">Required</span></label>
+								<input type="date" id="bdate" name="bdate" min="1980-01-01" onclick="dateValidation()" onchange="validate_bdate()" />
+							</div> -->
 						<div class="dob_fileds selectbox">
 							<label>My birthdate is <span id="bdate" class="bdt">Required</span></label>
 							
-
+							<!-- <input type="date" min="1985-01-01" max="" onclick="check_bDate()"/> -->
 							<ul>
 								<li>
 									<select name="month" class="select month" onchange="checkBdate()">
@@ -193,7 +198,7 @@
 									</select>
 								</li>
 								<li>
-									<select name="day" class="select day" onchange="validate_bdate()">
+									<select name="day" class="select day" onchange="checkBdate()">
 										<option value="1">01</option>
 										<option value="2">02</option>
 										<option value="3">03</option>
@@ -231,7 +236,7 @@
 								</li>
 
 								<li>
-									<select name="year" class="select year" onchange="validate_bdate()">
+									<select name="year" class="select year" onchange="checkBdate()">
 										<option value="yyyy">Year</option>
 										
 										<script type="text/javascript">
@@ -270,7 +275,7 @@
 							</ul>
 							<span id="interest_error" style="visibility: hidden">error</span>	
 						</div> -->
-						<div class="gender_fileds">
+						<div class="gender_fileds" >
 							<label>Gender</label>
 							<ul>
 								<li><input type="radio" class="radio" id="residence1" name="radio" /><label class="radio-label" for="residence1">Male</label></li>
@@ -300,8 +305,9 @@
 				</ul>
 				<div class="next_btn_block">
 					<div class="next_btn">
-							<span class="error" id="errorOnSubmit" style="visibility : hidden;">error</span>
 						<button style="padding:15px 30px;background-color:rgb(84, 179, 30);">NEXT</button>
+						<span class="error" id="errorOnSubmit" style="visibility : hidden;">error</span>
+
 						<!--<a href="partners_preference_form.html">Proceed to Step 2 <span><img src="images/small_triangle.png" alt="small_triangle"> </span></a>-->
 					
 					</div>
