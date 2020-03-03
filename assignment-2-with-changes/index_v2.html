@@ -273,7 +273,7 @@
 						<div class="gender_fileds">
 							<label>Gender</label>
 							<ul>
-								<li><input type="radio" class="radio" id="residence1" name="radio" onblur="check_gender()" /><label class="radio-label" for="residence1">Male</label></li>
+								<li><input type="radio" class="radio" id="residence1" name="radio" /><label class="radio-label" for="residence1">Male</label></li>
 								<li><input type="radio" class="radio" id="residence2" name="radio" /><label class="radio-label" for="residence2">Female</label></li>
 							</ul>
 							<span class="error" id="gender_error" style="visibility : hidden;">error</span>
@@ -287,10 +287,12 @@
 								<li><input type="checkbox" class="checkbox" id="checkbox_sample19" /> <label class="css-label" for="checkbox_sample19">Reading</label></li>
 								<li><input type="checkbox" class="checkbox" id="checkbox_sample20" /> <label class="css-label" for="checkbox_sample20">Playing</label></li>
 							</ul>
+							<span class="error" id="interest_error" style="visibility : hidden;">error</span>
+
 						</div>
 						<div class="about_you_fileds">
 						<label>About you</label>
-						<textarea name="write" onblur="return checkTextArea()"></textarea>
+						<textarea name="write" onblur="return" onkeyup="return checkTextArea()"></textarea>
 						<span class="error" id="textarea_error" style="visibility : hidden;">error</span>
 						
 					</div>						

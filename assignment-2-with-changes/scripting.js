@@ -231,6 +231,27 @@ function checkBdate() {
 }
 function checkTextArea(){
     var message=document.forms["form1"]["write"].value;
+
+    // if((document.Form1.radio[0].checked == false) && (document.Form1.radio[1].checked == false)) {
+	// 		document.getElementById("gender_error").style.visibility = "visible";
+	// 		document.getElementById("gender_error").innerHTML = "Please select a gender";
+			
+	// 		return false;
+    // }
+    if(document.form1.radio[0].checked == false &&
+		document.form1.radio[1].checked == false) {
+			document.getElementById("gender_error").style.visibility = "visible";
+			document.getElementById("gender_error").innerHTML = "Please select a gender";
+			
+			return false;
+	}
+    if( document.form1.checkbox_sample18.checked == false 
+		&& document.form1.checkbox_sample19.checked == false 
+		&& document.form1.checkbox_sample20.checked == false) {
+			document.getElementById("interest_error").style.visibility = "visible";
+			document.getElementById("interest_error").innerHTML = "please select atleast one interest";
+		return false;
+	}
     if(message=="")
     {   
         document.getElementById("textarea_error").style.visibility = "visible";
@@ -242,48 +263,48 @@ function checkTextArea(){
         return true;
     }
 }
-function check_gender(){
-    var radio1=document.getElementById('residence1').checked;
-    var radio2=document.getElementById('residence2').checked;
-    // var maleRadioButton=document.getElementById('residence1').checked;
-    // var femaleRadioButton=document.getElementById('residence2').checked;
-    // if(maleRadioButton=="" && femaleRadioButton==""){
-	// 		document.getElementById("gender_error").style.visibility = "visible";
-	// 		document.getElementById("gender_error").innerHTML = "Please select a gender";
-	// 		return false;
-    //     }
-    // else{
-    //     document.getElementById("gender_error").style.visibility="hidden";
-    //     return true;
-    // }
-     if(radio1==""&&radio2==""){//gender
-            //    alert("please select one");
-            document.getElementById("gender_error").style.visibility = "visible";
-            document.getElementById("gender_error").innerHTML = "select the gender";
-            return false;
+// function check_gender(){
+//     var radio1=document.getElementById('residence1').checked;
+//     var radio2=document.getElementById('residence2').checked;
+//     // var maleRadioButton=document.getElementById('residence1').checked;
+//     // var femaleRadioButton=document.getElementById('residence2').checked;
+//     // if(maleRadioButton=="" && femaleRadioButton==""){
+// 	// 		document.getElementById("gender_error").style.visibility = "visible";
+// 	// 		document.getElementById("gender_error").innerHTML = "Please select a gender";
+// 	// 		return false;
+//     //     }
+//     // else{
+//     //     document.getElementById("gender_error").style.visibility="hidden";
+//     //     return true;
+//     // }
+//      if(radio1==false&&radio2==false){//gender
+//             //    alert("please select one");
+//             document.getElementById("gender_error").style.visibility = "visible";
+//             document.getElementById("gender_error").innerHTML = "select the gender";
+//             return false;
                 
-            }
+//             }
             
-            else{
-                document.getElementById("gender_error").style.visibility="hidden";
-                return true;
-            }
-}
-function checkInterest(){
-            var checkbox1=document.getElementById('checkbox_sample18').checked;
-            var checkbox2=document.getElementById('checkbox_sample19').checked;
-            var checkbox3=document.getElementById('checkbox_sample20').checked;
-            if(checkbox1==""||checkbox2==""||checkbox3=="")
-            {
-                document.getElementById("interest_error").style.visibility = "visible";
-                document.getElementById("interest_error").innerHTML = "Please select a gender";
-                return false; 
-            }
-            else{
-                document.getElementById("interest_error").style.visibility="hidden";
-                return true;
-            }
-}
+//             else{
+//                 document.getElementById("gender_error").style.visibility="hidden";
+//                 return true;
+//             }
+// }
+// function checkInterest(){
+//             var checkbox1=document.getElementById('checkbox_sample18').checked;
+//             var checkbox2=document.getElementById('checkbox_sample19').checked;
+//             var checkbox3=document.getElementById('checkbox_sample20').checked;
+//             if(checkbox1==""||checkbox2==""||checkbox3=="")
+//             {
+//                 document.getElementById("interest_error").style.visibility = "visible";
+//                 document.getElementById("interest_error").innerHTML = "Please select a gender";
+//                 return false; 
+//             }
+//             else{
+//                 document.getElementById("interest_error").style.visibility="hidden";
+//                 return true;
+//             }
+// }
 function testValidation(){
     if(!checkFirstName()||!checkLastname()||!checkPhoneNo()||!checkOfficeNo()||
     !checkPassword()||!confirmPassword()||!checkBdate()||!checkTextArea()||
