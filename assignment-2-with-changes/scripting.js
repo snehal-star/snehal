@@ -122,6 +122,13 @@ function checkEmail(){
         document.getElementById("email_error").innerHTML="start with special charecter is invalid";
         return false;
     }
+    for(i=0;i<=9;i++){
+        if(emailId.indexOf(i)==0){
+            document.getElementById("email_error").style.visibility="visible";
+        document.getElementById("email_error").innerHTML="start with numeric value is invalid";
+        return false;
+        }
+    }
     // if((emailId.length)==1){
     //     // console.log(typeof emailId);
     //     var emailidInNum = Number(emailId);
@@ -235,18 +242,32 @@ function checkTextArea(){
         return true;
     }
 }
-function checkGender(){
-    var maleRadioButton=document.getElementById('residence1').checked;
-    var femaleRadioButton=document.getElementById('residence2').checked;
-    if(maleRadioButton=="" && femaleRadioButton==""){
-			document.getElementById("gender_error").style.visibility = "visible";
-			document.getElementById("gender_error").innerHTML = "Please select a gender";
-			return false;
-        }
-    else{
-        document.getElementById("gender_error").style.visibility="hidden";
-        return true;
-    }
+function check_gender(){
+    var radio1=document.getElementById('residence1').checked;
+    var radio2=document.getElementById('residence2').checked;
+    // var maleRadioButton=document.getElementById('residence1').checked;
+    // var femaleRadioButton=document.getElementById('residence2').checked;
+    // if(maleRadioButton=="" && femaleRadioButton==""){
+	// 		document.getElementById("gender_error").style.visibility = "visible";
+	// 		document.getElementById("gender_error").innerHTML = "Please select a gender";
+	// 		return false;
+    //     }
+    // else{
+    //     document.getElementById("gender_error").style.visibility="hidden";
+    //     return true;
+    // }
+     if(radio1==""&&radio2==""){//gender
+            //    alert("please select one");
+            document.getElementById("gender_error").style.visibility = "visible";
+            document.getElementById("gender_error").innerHTML = "select the gender";
+            return false;
+                
+            }
+            
+            else{
+                document.getElementById("gender_error").style.visibility="hidden";
+                return true;
+            }
 }
 function checkInterest(){
             var checkbox1=document.getElementById('checkbox_sample18').checked;
