@@ -1,17 +1,18 @@
 
 function checkFirstName(){
     var num=/[0-9]/;
-    var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
+    // var specialChar= /[!@#\$%\^\&*\)\(+=._-\``\/\\\[]/;
+    var specialChar= /[!@#\$%\^\&*\)\(+=._-\``\/]/;
+
     let firstName = document.forms["form1"]["firstname"].value;
 
     if(firstName == ""){
-        // window.alert("Enter your First Name");
         document.getElementById("fname").style.visibility="visible";
         document.getElementById("fname").innerHTML="Enter fname";
         return false;
     }
      else if(num.test(firstName)){
-         
+         console.log(typeof firstName);
         document.getElementById("fname").style.visibility="visible";
         document.getElementById("fname").innerHTML="numbers are not allowed in name";
         return false;
@@ -104,21 +105,34 @@ function checkLastname(){
 }
 
 function checkEmail(){
-    var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
+    // var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
+    
     let emailId = document.forms["form1"]["email"].value;
     // let first_index=/[0-9!@#\$%\^\&*\)\(+=._-]/;
-    var emailIdPattern=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    var emailIdPattern=/^([a-zA-Z_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     if(emailId=="")
     {
         document.getElementById("email_error").style.visibility="visible";
        document.getElementById("email_error").innerHTML="Enter Email";
        return false;
     }
+   
     if((emailId.indexOf('@')==0) || (emailId.indexOf('!')==0) || (emailId.indexOf('#')==0) || (emailId.indexOf('$')==0)){
         document.getElementById("email_error").style.visibility="visible";
         document.getElementById("email_error").innerHTML="start with special charecter is invalid";
         return false;
     }
+    // if((emailId.length)==1){
+    //     // console.log(typeof emailId);
+    //     var emailidInNum = Number(emailId);
+    //     console.log(emailidInNum);
+    //     if((typeof emailidInNum)=="number"){
+    //         document.getElementById("email_error").style.visibility="visible";
+    //         document.getElementById("email_error").innerHTML="start with numeric value is invalid";
+    //         return false;
+    //     }
+    // }
+
     if(!(emailIdPattern.test(emailId))){
         document.getElementById("email_error").style.visibility="visible";
         document.getElementById("email_error").innerHTML="Invalid Email Id Pattern";
