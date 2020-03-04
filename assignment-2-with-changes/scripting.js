@@ -1,7 +1,8 @@
-
-function checkFirstName(){
-    var num=/[0-9]/;
-    // var specialChar= /[!@#\$%\^\&*\)\(+=._-\``\/\\\[]/;
+function validation(id){
+    console.log("ss"  + id);
+    if(id=="f"){
+        console.log("checking validation for fname"+"         "+id);
+        var num=/[0-9]/;
     var specialChar= /[!@#\$%\^\&*\)\(+=._-\``\/]/;
 
     let firstName = document.forms["form1"]["firstname"].value;
@@ -25,12 +26,12 @@ function checkFirstName(){
     
     else{
         document.getElementById("fname").style.visibility="hidden";
+        
         return true;
     }
-    
-}
-function checkLastname(){
-    var num=/[0-9]/;
+    }
+    if(id=="l"){
+        var num=/[0-9]/;
     var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
     let lastName = document.forms["form1"]["lastname"].value;
     if(lastName == ""){
@@ -55,8 +56,68 @@ function checkLastname(){
         return true;
     }
 
-
+    }
 }
+
+
+// function checkFirstName(){
+//     var num=/[0-9]/;
+//     // var specialChar= /[!@#\$%\^\&*\)\(+=._-\``\/\\\[]/;
+//     var specialChar= /[!@#\$%\^\&*\)\(+=._-\``\/]/;
+
+//     let firstName = document.forms["form1"]["firstname"].value;
+
+//     if(firstName == ""){
+//         document.getElementById("fname").style.visibility="visible";
+//         document.getElementById("fname").innerHTML="Enter fname";
+//         return false;
+//     }
+//      else if(num.test(firstName)){
+//          console.log(typeof firstName);
+//         document.getElementById("fname").style.visibility="visible";
+//         document.getElementById("fname").innerHTML="numbers are not allowed in name";
+//         return false;
+//     }
+//     else if(specialChar.test(firstName)){
+//         document.getElementById("fname").style.visibility="visible";
+//         document.getElementById("fname").innerHTML="special charecters are not allowed";
+//         return false;
+//     }
+    
+//     else{
+//         document.getElementById("fname").style.visibility="hidden";
+//         return true;
+//     }
+    
+// }
+// function checkLastname(){
+//     var num=/[0-9]/;
+//     var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
+//     let lastName = document.forms["form1"]["lastname"].value;
+//     if(lastName == ""){
+//         document.getElementById("lname").style.visibility="visible";
+//         document.getElementById("lname").innerHTML="Enetr Last name";
+//         return false;
+//     }
+//     else if(num.test(lastName)){
+         
+//         document.getElementById("lname").style.visibility="visible";
+//         document.getElementById("lname").innerHTML="numbers are not allowed in name";
+//         return false;
+//     }
+//     else if(specialChar.test(lastName)){
+//         document.getElementById("lname").style.visibility="visible";
+//         document.getElementById("lname").innerHTML="special charecters are not allowed";
+//         return false;
+//     }
+    
+//     else{
+//         document.getElementById("lname").style.visibility="hidden";
+//         return true;
+//     }
+
+
+// }
  function checkPhoneNo(){
      let phoneNo = document.forms["form1"]["phone"].value;
     
@@ -105,10 +166,8 @@ function checkLastname(){
 }
 
 function checkEmail(){
-    // var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
-    
+    var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
     let emailId = document.forms["form1"]["email"].value;
-    // let first_index=/[0-9!@#\$%\^\&*\)\(+=._-]/;
     var emailIdPattern=/^([a-zA-Z_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     if(emailId=="")
     {
@@ -129,17 +188,6 @@ function checkEmail(){
         return false;
         }
     }
-    // if((emailId.length)==1){
-    //     // console.log(typeof emailId);
-    //     var emailidInNum = Number(emailId);
-    //     console.log(emailidInNum);
-    //     if((typeof emailidInNum)=="number"){
-    //         document.getElementById("email_error").style.visibility="visible";
-    //         document.getElementById("email_error").innerHTML="start with numeric value is invalid";
-    //         return false;
-    //     }
-    // }
-
     if(!(emailIdPattern.test(emailId))){
         document.getElementById("email_error").style.visibility="visible";
         document.getElementById("email_error").innerHTML="Invalid Email Id Pattern";
@@ -150,10 +198,8 @@ function checkEmail(){
          return true;
      }
 }
-
 function checkPassword(){
     var passwordPattern=/[0-9]/;
-    // var password_spl_char=//;
     var specialChar= /[!@#\$%\^\&*\)\(+=._-]/;
 
     let password=document.forms["form1"]["password"].value;
@@ -229,33 +275,13 @@ function checkBdate() {
 	}
 
 }
-// function checkGender(){
-//     if(document.form1.radio[0].checked == false &&
-// 		document.form1.radio[1].checked == false) {
-// 			document.getElementById("gender_error").style.visibility = "visible";
-// 			document.getElementById("gender_error").innerHTML = "select a gender";
-			
-// 			return false;
-//     }
-//     else{
-//         document.getElementById("gender_error").style.visibility = "hidden";
-// 		return true;
-//     }
-// }
+
 function checkTextArea(){
     var message=document.forms["form1"]["write"].value;
-
-    // if((document.Form1.radio[0].checked == false) && (document.Form1.radio[1].checked == false)) {
-	// 		document.getElementById("gender_error").style.visibility = "visible";
-	// 		document.getElementById("gender_error").innerHTML = "Please select a gender";
-			
-	// 		return false;
-    // }
     if(document.form1.radio[0].checked == false &&
 		document.form1.radio[1].checked == false) {
 			document.getElementById("gender_error").style.visibility = "visible";
 			document.getElementById("gender_error").innerHTML = "select a gender";
-			
 			return false;
 	}
     if( document.form1.checkbox_sample18.checked == false 
@@ -279,48 +305,6 @@ function checkTextArea(){
         return true;
     }
 }
-// function check_gender(){
-//     var radio1=document.getElementById('residence1').checked;
-//     var radio2=document.getElementById('residence2').checked;
-//     // var maleRadioButton=document.getElementById('residence1').checked;
-//     // var femaleRadioButton=document.getElementById('residence2').checked;
-//     // if(maleRadioButton=="" && femaleRadioButton==""){
-// 	// 		document.getElementById("gender_error").style.visibility = "visible";
-// 	// 		document.getElementById("gender_error").innerHTML = "Please select a gender";
-// 	// 		return false;
-//     //     }
-//     // else{
-//     //     document.getElementById("gender_error").style.visibility="hidden";
-//     //     return true;
-//     // }
-//      if(radio1==false&&radio2==false){//gender
-//             //    alert("please select one");
-//             document.getElementById("gender_error").style.visibility = "visible";
-//             document.getElementById("gender_error").innerHTML = "select the gender";
-//             return false;
-                
-//             }
-            
-//             else{
-//                 document.getElementById("gender_error").style.visibility="hidden";
-//                 return true;
-//             }
-// }
-// function checkInterest(){
-//             var checkbox1=document.getElementById('checkbox_sample18').checked;
-//             var checkbox2=document.getElementById('checkbox_sample19').checked;
-//             var checkbox3=document.getElementById('checkbox_sample20').checked;
-//             if(checkbox1==""||checkbox2==""||checkbox3=="")
-//             {
-//                 document.getElementById("interest_error").style.visibility = "visible";
-//                 document.getElementById("interest_error").innerHTML = "Please select a gender";
-//                 return false; 
-//             }
-//             else{
-//                 document.getElementById("interest_error").style.visibility="hidden";
-//                 return true;
-//             }
-// }
 function testValidation(){
     
     if(!checkFirstName()||!checkLastname()||!checkPhoneNo()||!checkOfficeNo()||
@@ -336,19 +320,16 @@ function testValidation(){
     }
     
 }
-
 function dateValidation(){
     var year = today.getFullYear();
     var m = today.getMonth()+1;
     var d = today.getDate();
-
     if( d>0 && d<=9){
         date="0"+d;
     }
     if( m>0 && m<=9){
         month="0"+m;
     }
-   
     var maxDate = year+"-"+month+"-"+date;
     document.getElementById("bdate").max = maxDate;
 }
